@@ -1,0 +1,29 @@
+from random import shuffle
+import time
+import numpy as np
+
+def searchMin(matrix,boyut):
+    min=matrix[0][0][0]
+    for i in range(boyut):
+        for j in range(boyut):
+            for k in range(boyut):
+                if matrix[i][j][k] < min:
+                    min = matrix[i][j][k]
+    return min
+
+
+n=100
+array = [[[k for k in xrange(n)] for j in xrange(n)] for i in xrange(n)]
+shuffle(array)
+
+start = time.time()
+result=searchMin(array,100)
+end = time.time()
+sure = end-start
+
+print("n^3 N=1000, sure = ",sure*(10**3), "sn")
+print("n^3 N=10000, sure = ",sure*(10**9), "sn")
+print("n^3 N=100000, sure = ",sure*((10**9)**3), "sn")
+print("n^3 N=1000000, sure = ",sure*(((10**9)**3)**3), "sn")
+
+

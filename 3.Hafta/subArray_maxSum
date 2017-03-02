@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+void ikiyebol(int a[],int n){
+   int birinci_dizi[n/2], ikinci_dizi[n-n/2];
+   int max_birinci_toplam=0;
+   int max_ikinci_toplam=0;
+   cout << "birinci dizi:  ";
+   for(int i=0;i<n/2;i++){
+        birinci_dizi[i]=a[n/2-i-1];
+        cout<< " "<< birinci_dizi[i];
+        max_birinci_toplam+=birinci_dizi[i];
+   }cout << endl;
+
+   cout << "ikinci dizi:   ";
+   for(int i=n/2;i<n;i++){
+        ikinci_dizi[i]=a[i];
+        cout<< " "<< ikinci_dizi[i];
+        max_ikinci_toplam+=ikinci_dizi[i];
+
+   }cout << endl;
+
+   int max_toplam = max_birinci_toplam + max_ikinci_toplam;
+   cout << "max toplam:  " << max_toplam ;
+}
+
+int main()
+{
+    int a[8]={4,-3,2,1,6,-1,-2,4};
+    ikiyebol(a,8);
+    return 0;
+}
