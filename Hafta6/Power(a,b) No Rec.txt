@@ -1,0 +1,30 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+double Power(int a,int b){
+    double sonuc=1;
+    int adim=0;
+    while(b){
+        if(b%2==0){
+            sonuc=sonuc*sonuc;
+            b=b/2;
+        }else{
+            sonuc=sonuc*a;
+            b=b-1;
+        }
+        adim++;
+    }
+    cout<<"Adim Sayisi "<<adim<<endl;
+    return sonuc;
+
+}
+
+
+int main()
+{
+    cout << Power(3,62)<< endl;
+
+    return 0;
+}
